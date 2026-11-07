@@ -1,4 +1,5 @@
 import 'schedule_parser.dart';
+import 'schedule_utils.dart';
 
 /// Перевіряє коректність значень у записі [entry].
 ///
@@ -38,6 +39,8 @@ List<String> validateScheduleEntry(ScheduleEntry entry) {
 
   if (entry.room.trim().isEmpty) {
     errors.add('Аудиторія не вказана');
+  } else if (!isValidRoom(entry.room)) {
+    errors.add('Некоректний формат аудиторії');
   }
 
   return errors;

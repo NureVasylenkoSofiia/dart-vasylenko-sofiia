@@ -3,21 +3,24 @@ import 'package:group_schedule/schedule_parser.dart';
 import 'package:group_schedule/schedule_validator.dart';
 import 'package:group_schedule/schedule_statistics.dart';
 import 'package:group_schedule/schedule_report.dart';
+import 'package:group_schedule/schedule_utils.dart';
 
 void main() {
   final validEntries = <ScheduleEntry>[];
   var rejectedCount = 0;
+  final nextRecordNumber = createRecordCounter();
 
   print('=== РОЗКЛАД ЗАНЯТЬ ГРУПИ ===');
   print('Усього вхідних записів: ${rawSchedule.length}');
   print('');
 
-  for (final (index, line) in rawSchedule.indexed) {
+  for (final line in rawSchedule) {
+    final recordNumber = nextRecordNumber();
     final entry = parseScheduleLine(line);
 
     if (entry == null) {
       rejectedCount++;
-      print('Запис ${index + 1}: ПОМИЛКА ФОРМАТУ');
+      print('Запис $recordNumber: ПОМИЛКА ФОРМАТУ');
       continue;
     }
 
@@ -25,7 +28,7 @@ void main() {
 
     if (errors.isNotEmpty) {
       rejectedCount++;
-      print('Запис ${index + 1}: ПОМИЛКА ВАЛІДАЦІЇ');
+      print('Запис $recordNumber: ПОМИЛКА ВАЛІДАЦІЇ');
       for (final error in errors) {
         print('  - $error');
       }
@@ -35,7 +38,7 @@ void main() {
     validEntries.add(entry);
 
     print(
-      'Запис ${index + 1}: OK — '
+      'Запис $recordNumber: OK — '
       '${entry.subject}, ${entry.weekday}, ${entry.room}',
     );
   }
@@ -95,4 +98,20 @@ void main() {
       separator: ' | ',
     ),
   );
+
+  print('');
+  print('=== МАСКУВАННЯ АУДИТОРІЙ ===');
+
+  for (final entry in validEntries.take(5)) {
+    print('${entry.room} → ${maskRoom(entry.room)}');
+  }
+
+  print('');
+  print('=== ВІК ЗАПИСІВ У ДНЯХ ===');
+
+  for (final entry in validEntries.take(5)) {
+    final days = daysSinceLesson(entry.date);
+
+    print('${entry.subject}: $days дн.');
+  }
 }
