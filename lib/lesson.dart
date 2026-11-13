@@ -60,6 +60,32 @@ class Lesson {
     return '$subject ($lessonType), $weekday '
         '$formattedTime, аудиторія $room';
   }
+
+  /// Порівнює заняття за значеннями всіх полів.
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        other is Lesson &&
+            subject == other.subject &&
+            teacher == other.teacher &&
+            lessonType == other.lessonType &&
+            weekday == other.weekday &&
+            startMinutes == other.startMinutes &&
+            room == other.room &&
+            date == other.date;
+  }
+
+  /// Хеш-код на основі тих самих полів, що й у порівнянні.
+  @override
+  int get hashCode => Object.hash(
+    subject,
+    teacher,
+    lessonType,
+    weekday,
+    startMinutes,
+    room,
+    date,
+  );
 }
 
 /// Розділяє рядок на поля та перевіряє їхню кількість.
