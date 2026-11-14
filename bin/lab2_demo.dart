@@ -1,5 +1,6 @@
 import 'package:group_schedule/lesson.dart';
 import 'package:group_schedule/lesson_primary.dart';
+import 'package:group_schedule/lesson_kind.dart';
 
 void main() {
   final csvLesson = Lesson.fromCsv(
@@ -34,4 +35,23 @@ void main() {
   print('');
   print('Чи однакові заняття: ${csvLesson == lessonCopy}');
   print('Кількість елементів у Set: ${lessonsSet.length}');
+
+  print('');
+  print('Типи занять та рекомендації:');
+
+  final kinds = <LessonKind>[
+    const LectureKind(),
+    const PracticeKind(),
+    const LaboratoryKind(),
+    const SeminarKind(),
+  ];
+
+  for (final kind in kinds) {
+    print(kind.describe());
+    print('Підготовка: ${getPreparationAdvice(kind)}');
+
+    if (kind is PreparationMaterials) {
+      print(kind.getPreparationReminder());
+    }
+  }
 }
