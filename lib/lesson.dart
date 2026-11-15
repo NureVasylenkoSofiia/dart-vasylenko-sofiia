@@ -1,5 +1,7 @@
+import 'package:group_schedule/repository.dart';
+
 /// Одне заняття з розкладу університетської групи.
-class Lesson {
+class Lesson implements Identifiable {
   final String subject;
   final String teacher;
   final String lessonType;
@@ -7,6 +9,18 @@ class Lesson {
   final int startMinutes;
   final String room;
   final DateTime date;
+
+  /// Ідентифікатор заняття на основі його характеристик.
+  @override
+  String get id => [
+    subject,
+    teacher,
+    lessonType,
+    weekday,
+    startMinutes.toString(),
+    room,
+    date.toIso8601String(),
+  ].join('|');
 
   /// Створює заняття із заданими характеристиками.
   const Lesson({
