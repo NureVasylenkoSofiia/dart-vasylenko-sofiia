@@ -6,6 +6,11 @@ import 'package:group_schedule/repository.dart';
 import 'package:group_schedule/lesson_type.dart';
 import 'package:group_schedule/lesson_parsing.dart';
 import 'package:group_schedule/lesson_patterns.dart';
+import 'package:group_schedule/lesson_schedule_service.dart';
+import 'package:group_schedule/schedule_data.dart';
+import 'package:group_schedule/lesson_validator.dart';
+import 'package:group_schedule/lesson_statistics.dart';
+import 'package:group_schedule/lesson_report.dart';
 
 void main() {
   final csvLesson = Lesson.fromCsv(
@@ -122,4 +127,102 @@ void main() {
 
   print('Результат перевірки: ${getLessonNotice(earlyLab)}');
   print('Звичайне заняття: ${getLessonNotice(csvLesson)}');
+
+  print('');
+  print('Обробка повного розкладу через об’єкти Lesson:');
+
+  final scheduleResult = parseSchedule(rawSchedule);
+  final (lessons: scheduleLessons, errors: scheduleErrors) = scheduleResult;
+
+  print('Усього записів: ${rawSchedule.length}');
+  print('Коректних занять: ${scheduleLessons.length}');
+  print('Відхилених записів: ${scheduleErrors.length}');
+
+  print('');
+  print('Помилки розбору:');
+
+  for (final error in scheduleErrors) {
+    print(error);
+  }
+
+  print('');
+  print('Перші три заняття:');
+
+  for (final lesson in scheduleLessons.take(3)) {
+    print(lesson);
+  }
+
+  print('');
+  print('Перевірка валідатора Lesson:');
+
+  final validErrors = validateLesson(csvLesson);
+  print('Помилки коректного заняття: ${validErrors.length}');
+
+  final invalidDayLesson = Lesson(
+    subject: 'Математика',
+    teacher: 'Іваненко І.І.',
+    lessonType: 'Лекція',
+    weekday: 'П’ятниця',
+    startMinutes: 570,
+    room: 'А-101',
+    date: DateTime(2026, 11, 2),
+  );
+
+  final invalidDayErrors = validateLesson(invalidDayLesson);
+
+  print('Помилки заняття з неправильним днем:');
+  for (final error in invalidDayErrors) {
+    print(error);
+  }
+
+  print('');
+  print('Статистика розкладу через Lesson:');
+
+  final laboratoryLessons = filterLaboratoryLessons(scheduleLessons);
+  final uniqueSubjects = getUniqueSubjects(scheduleLessons);
+  final totalLessons = countLessons(scheduleLessons);
+  final lessonsByDay = countLessonsByWeekday(scheduleLessons);
+
+  print('Усього занять: $totalLessons');
+  print('Лабораторних занять: ${laboratoryLessons.length}');
+  print('Унікальних дисциплін: ${uniqueSubjects.length}');
+
+  print('');
+  print('Кількість занять за днями тижня:');
+
+  for (final entry in lessonsByDay.entries) {
+    print('${entry.key}: ${entry.value}');
+  }
+
+  final sortedByTime = sortLessonsByTime(scheduleLessons);
+  final sortedBySubject = sortLessonsBySubject(
+    scheduleLessons,
+    ascending: false,
+  );
+
+  print('');
+  print('Перші три заняття за часом:');
+
+  for (final lesson in sortedByTime.take(3)) {
+    print(lesson);
+  }
+
+  print('');
+  print('Перші три заняття за назвою (спадання):');
+
+  for (final lesson in sortedBySubject.take(3)) {
+    print(lesson);
+  }
+
+  print('');
+  print('Текстовий звіт для об’єктів Lesson:');
+
+  final report = buildLessonReport(
+    scheduleLessons,
+    topCount: 5,
+    ascending: true,
+    separator: ' | ',
+  );
+
+  print(report);
 }
