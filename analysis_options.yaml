@@ -13,11 +13,11 @@
 
 include: package:lints/recommended.yaml
 
-# Uncomment the following section to specify additional rules.
-
-# linter:
-#   rules:
-#     - camel_case_types
+# Additional rules for asynchronous operations.
+linter:
+  rules:
+    unawaited_futures: true
+    discarded_futures: true
 
 # analyzer:
 #   exclude:
