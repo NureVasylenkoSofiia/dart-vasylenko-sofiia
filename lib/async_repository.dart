@@ -30,9 +30,13 @@ class AsyncRepository<T extends Identifiable> {
 
   /// Поступово видає всі збережені об'єкти.
   Stream<T> watchAll() async* {
+    print('Генератор watchAll() почав виконуватися');
+
     for (final item in _items.values.toList()) {
       await Future<void>.delayed(delay);
       yield item;
     }
+
+    print('Генератор watchAll() завершився');
   }
 }
