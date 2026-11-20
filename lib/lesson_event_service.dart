@@ -22,5 +22,10 @@ class LessonEventService {
     _controller.add(LessonEvent(action, subject));
   }
 
+  /// Передає повідомлення про помилку до потоку.
+  void addError(Object error) {
+    _controller.addError(error);
+  }
+
   Future<void> close() => _controller.close();
 }
