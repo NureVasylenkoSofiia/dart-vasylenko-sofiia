@@ -1,0 +1,15 @@
+﻿00:00 +0: loading test\async_repository_test.dart
+00:00 +0: test\async_repository_test.dart: AsyncRepository ╨Ч╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╤В╨░ ╨╖╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
+00:00 +1: test\async_repository_test.dart: AsyncRepository ╨Ч╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╤В╨░ ╨╖╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
+00:00 +2: test\async_repository_test.dart: AsyncRepository ╨Ч╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╜╨╡╤Ц╤Б╨╜╤Г╤О╤З╨╛╨│╨╛ ╨╖╨░╨╜╤П╤В╤В╤П
+00:00 +3: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╨▓╤В╨╛╤А╨╜╨╡ ╨╖╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
+╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨┐╨╛╤З╨░╨▓ ╨▓╨╕╨║╨╛╨╜╤Г╨▓╨░╤В╨╕╤Б╤П
+╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨╖╨░╨▓╨╡╤А╤И╨╕╨▓╤Б╤П
+00:00 +4: test\async_repository_test.dart: AsyncRepository ╨Т╨╕╨┤╨░╨╗╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
+00:00 +5: test\async_repository_test.dart: AsyncRepository ╨Т╨╕╨┤╨░╨╗╨╡╨╜╨╜╤П ╨╜╨╡╤Ц╤Б╨╜╤Г╤О╤З╨╛╨│╨╛ ╨╖╨░╨╜╤П╤В╤В╤П
+00:00 +6: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╤А╤П╨┤╨╛╨║ ╨╜╨░╨┤╤Е╨╛╨┤╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤М ╤Г ╨┐╨╛╤В╨╛╤Ж╤Ц
+╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨┐╨╛╤З╨░╨▓ ╨▓╨╕╨║╨╛╨╜╤Г╨▓╨░╤В╨╕╤Б╤П
+00:00 +7: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╤А╤П╨┤╨╛╨║ ╨╜╨░╨┤╤Е╨╛╨┤╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤М ╤Г ╨┐╨╛╤В╨╛╤Ж╤Ц
+╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨╖╨░╨▓╨╡╤А╤И╨╕╨▓╤Б╤П
+00:00 +8: test\lesson_event_service_test.dart: LessonEventService ╨Ю╨▒╤А╨╛╨▒╨║╨░ ╨┐╨╛╨╝╨╕╨╗╨║╨╕ ╤В╨░ ╨╜╨░╤Б╤В╤Г╨┐╨╜╨╛╤Ч ╨┐╨╛╨┤╤Ц╤Ч ╨┐╨╛╤В╨╛╨║╤Г
+00:00 +9: All tests passed!
