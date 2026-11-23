@@ -1,9 +1,9 @@
-import 'package:group_schedule/lesson.dart';
-import 'package:group_schedule/lesson_primary.dart';
-import 'package:group_schedule/lesson_kind.dart';
+import 'package:group_schedule/src/models/lesson.dart';
+import 'package:group_schedule/src/models/lesson_primary.dart';
+import 'package:group_schedule/src/models/lesson_kind.dart';
 import 'package:group_schedule/schedule_extensions.dart';
 import 'package:group_schedule/repository.dart';
-import 'package:group_schedule/lesson_type.dart';
+import 'package:group_schedule/src/models/lesson_type.dart';
 import 'package:group_schedule/lesson_parsing.dart';
 import 'package:group_schedule/lesson_patterns.dart';
 import 'package:group_schedule/lesson_schedule_service.dart';

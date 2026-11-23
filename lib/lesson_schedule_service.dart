@@ -1,4 +1,4 @@
-import 'package:group_schedule/lesson.dart';
+import 'package:group_schedule/src/models/lesson.dart';
 import 'package:group_schedule/lesson_parsing.dart';
 import 'package:group_schedule/lesson_validator.dart';
 

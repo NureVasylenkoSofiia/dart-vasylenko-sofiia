@@ -1,5 +1,5 @@
 import 'package:group_schedule/async_repository.dart';
-import 'package:group_schedule/lesson.dart';
+import 'package:group_schedule/src/models/lesson.dart';
 
 Future<void> main() async {
   print('Лабораторна робота №3');

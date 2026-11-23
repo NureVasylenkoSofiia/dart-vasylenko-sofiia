@@ -1,5 +1,5 @@
 import 'package:group_schedule/async_repository.dart';
-import 'package:group_schedule/lesson.dart';
+import 'package:group_schedule/src/models/lesson.dart';
 import 'package:test/test.dart';
 
 void main() {

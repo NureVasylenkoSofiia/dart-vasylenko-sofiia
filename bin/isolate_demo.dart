@@ -1,6 +1,6 @@
 import 'dart:isolate';
 
-import 'package:group_schedule/heavy_schedule_statistics.dart';
+import 'package:group_schedule/group_schedule.dart';
 
 int globalCounter = 0;
 

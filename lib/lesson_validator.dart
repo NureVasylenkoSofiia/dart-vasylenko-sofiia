@@ -1,5 +1,5 @@
-import 'package:group_schedule/lesson.dart';
-import 'package:group_schedule/lesson_type.dart';
+import 'package:group_schedule/src/models/lesson.dart';
+import 'package:group_schedule/src/models/lesson_type.dart';
 
 /// Перевіряє характеристики заняття та повертає список помилок.
 List<String> validateLesson(Lesson lesson) {

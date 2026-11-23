@@ -1,4 +1,4 @@
-import 'package:group_schedule/lesson.dart';
+import 'package:group_schedule/src/models/lesson.dart';
 
 /// Визначає рекомендацію за характеристиками заняття.
 String getLessonNotice(Lesson lesson) {
