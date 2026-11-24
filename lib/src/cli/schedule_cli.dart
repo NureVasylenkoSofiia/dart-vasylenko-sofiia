@@ -5,6 +5,10 @@ import 'package:path/path.dart' as p;
 
 import 'package:group_schedule/group_schedule.dart';
 
+import 'dart:async';
+
+import 'package:http/http.dart' as http;
+
 /// Обробник команд консольного застосунку.
 class ScheduleCli {
   /// Виконує команду на основі аргументів.
@@ -18,13 +22,19 @@ class ScheduleCli {
       )
       ..addOption('subject', abbr: 's', help: 'Фільтр за назвою дисципліни')
       ..addOption('csv', help: 'Новий запис заняття у форматі CSV')
+      ..addOption('year', defaultsTo: '2026', help: 'Рік для отримання свят')
+      ..addOption(
+        'country',
+        defaultsTo: 'UA',
+        help: 'Код країни для отримання свят',
+      )
       ..addFlag('help', abbr: 'h', negatable: false, help: 'Показати довідку');
 
     try {
       final result = parser.parse(arguments);
 
       if (result['help'] == true || result.rest.isEmpty) {
-        print('Команди: list, add');
+        print('Команди: list, add, holidays');
         print(parser.usage);
         return 0;
       }
@@ -34,10 +44,45 @@ class ScheduleCli {
 
       final filePath = p.join(Directory.current.path, 'data', fileName);
 
-     final storage = JsonScheduleStorage(
-  Directory.current.path,
-  fileName: fileName,
-);
+      final storage = JsonScheduleStorage(
+        Directory.current.path,
+        fileName: fileName,
+      );
+
+      if (command == 'holidays') {
+        final yearText = result['year'] as String;
+        final country = (result['country'] as String).toUpperCase();
+        final year = int.tryParse(yearText);
+
+        if (year == null || year < 1 || year > 9999) {
+          stderr.writeln('Помилка: некоректний рік');
+          return 1;
+        }
+
+        if (!RegExp(r'^[A-Z]{2}$').hasMatch(country)) {
+          stderr.writeln('Помилка: код країни повинен містити 2 літери');
+          return 1;
+        }
+
+        final client = http.Client();
+
+        try {
+          final api = HolidayApiClient(client);
+          final holidays = await api.getHolidays(year, country);
+
+          print('Державні свята: $country, $year');
+          print('Знайдено свят: ${holidays.length}');
+          print('');
+
+          for (final holiday in holidays) {
+            print(holiday);
+          }
+
+          return 0;
+        } finally {
+          client.close();
+        }
+      }
 
       if (command == 'list') {
         final lessons = await storage.load();
@@ -90,6 +135,18 @@ class ScheduleCli {
       return 1;
     } on FileSystemException catch (error) {
       stderr.writeln('Помилка файлу: $error');
+      return 1;
+    } on SocketException catch (error) {
+      stderr.writeln('Немає з’єднання: $error');
+      return 1;
+    } on http.ClientException catch (error) {
+      stderr.writeln('Помилка HTTP-клієнта: $error');
+      return 1;
+    } on TimeoutException catch (error) {
+      stderr.writeln('Перевищено час очікування: $error');
+      return 1;
+    } on HolidayApiException catch (error) {
+      stderr.writeln('Помилка зовнішнього API: $error');
       return 1;
     }
   }

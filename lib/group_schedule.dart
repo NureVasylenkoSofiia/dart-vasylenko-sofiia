@@ -17,3 +17,5 @@ export 'lesson_report.dart';
 export 'src/services/heavy_schedule_statistics.dart';
 export 'src/storage/json_schedule_storage.dart';
 export 'src/storage/large_schedule_reader.dart';
+export 'src/models/public_holiday.dart';
+export 'src/network/holiday_api_client.dart';
