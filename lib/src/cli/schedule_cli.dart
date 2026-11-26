@@ -11,6 +11,13 @@ import 'package:http/http.dart' as http;
 
 /// Обробник команд консольного застосунку.
 class ScheduleCli {
+  /// Каталог, у якому зберігаються дані застосунку.
+  final String baseDirectory;
+
+  /// Створює CLI для заданого робочого каталогу.
+  ScheduleCli({String? baseDirectory})
+    : baseDirectory = baseDirectory ?? Directory.current.path;
+
   /// Виконує команду на основі аргументів.
   Future<int> run(List<String> arguments) async {
     final parser = ArgParser()
@@ -42,12 +49,17 @@ class ScheduleCli {
       final command = result.rest.first;
       final fileName = result['file'] as String;
 
-      final filePath = p.join(Directory.current.path, 'data', fileName);
+      // Дозволяємо тільки прості назви JSON-файлів.
+      final validFileName = RegExp(r'^[a-zA-Z0-9_-]+\.json$');
 
-      final storage = JsonScheduleStorage(
-        Directory.current.path,
-        fileName: fileName,
-      );
+      if (!validFileName.hasMatch(fileName)) {
+        stderr.writeln('Помилка: --file повинен містити лише назву JSON-файлу');
+        return 1;
+      }
+
+      final filePath = p.join(baseDirectory, 'data', fileName);
+
+      final storage = JsonScheduleStorage(baseDirectory, fileName: fileName);
 
       if (command == 'holidays') {
         final yearText = result['year'] as String;
