@@ -1,13 +1,26 @@
 import 'package:group_schedule/repository.dart';
 
-/// Одне заняття з розкладу університетської групи.
+/// Навчальне заняття з розкладу університетської групи.
 class Lesson implements Identifiable {
+  /// Назва навчальної дисципліни.
   final String subject;
+
+  /// Викладач, який проводить заняття.
   final String teacher;
+
+  /// Тип заняття: лекція, практика, лабораторна або семінар.
   final String lessonType;
+
+  /// День тижня, у який проводиться заняття.
   final String weekday;
-  final int startMinutes;
+
+  /// Номер аудиторії.
   final String room;
+
+  /// Час початку заняття у хвилинах від початку доби.
+  final int startMinutes;
+
+  /// Календарна дата проведення заняття.
   final DateTime date;
 
   /// Ідентифікатор заняття на основі його характеристик.

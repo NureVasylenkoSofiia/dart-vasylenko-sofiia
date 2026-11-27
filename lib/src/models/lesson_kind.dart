@@ -22,6 +22,7 @@ mixin PreparationMaterials on LessonKind {
 
 /// Лекційне заняття.
 final class LectureKind extends LessonKind with PreparationMaterials {
+  /// Створює об'єкт лекційного заняття.
   const LectureKind();
 
   @override
@@ -33,6 +34,7 @@ final class LectureKind extends LessonKind with PreparationMaterials {
 
 /// Практичне заняття.
 final class PracticeKind extends LessonKind {
+  /// Створює об'єкт практичного заняття.
   const PracticeKind();
 
   @override
@@ -44,6 +46,7 @@ final class PracticeKind extends LessonKind {
 
 /// Лабораторне заняття.
 final class LaboratoryKind extends LessonKind {
+  /// Створює об'єкт лабораторного заняття.
   const LaboratoryKind();
 
   @override
@@ -55,6 +58,7 @@ final class LaboratoryKind extends LessonKind {
 
 /// Семінарське заняття.
 final class SeminarKind extends LessonKind with PreparationMaterials {
+  /// Створює об'єкт семінарського заняття.
   const SeminarKind();
 
   @override

@@ -6,8 +6,10 @@ import 'package:group_schedule/repository.dart';
 class AsyncRepository<T extends Identifiable> {
   final Map<String, T> _items = {};
 
+  /// Затримка, яка імітує асинхронну операцію зі сховищем.
   final Duration delay;
 
+  /// Повертає кількість збережених об'єктів.
   AsyncRepository({this.delay = const Duration(milliseconds: 300)});
 
   /// Зберігає об'єкт за його ідентифікатором.

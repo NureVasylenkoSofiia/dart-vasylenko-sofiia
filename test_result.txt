@@ -1,15 +1,61 @@
-﻿00:00 +0: loading test\async_repository_test.dart
-00:00 +0: test\async_repository_test.dart: AsyncRepository ╨Ч╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╤В╨░ ╨╖╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
-00:00 +1: test\async_repository_test.dart: AsyncRepository ╨Ч╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╤В╨░ ╨╖╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
-00:00 +2: test\async_repository_test.dart: AsyncRepository ╨Ч╨░╨▓╨░╨╜╤В╨░╨╢╨╡╨╜╨╜╤П ╨╜╨╡╤Ц╤Б╨╜╤Г╤О╤З╨╛╨│╨╛ ╨╖╨░╨╜╤П╤В╤В╤П
-00:00 +3: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╨▓╤В╨╛╤А╨╜╨╡ ╨╖╨▒╨╡╤А╨╡╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
-╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨┐╨╛╤З╨░╨▓ ╨▓╨╕╨║╨╛╨╜╤Г╨▓╨░╤В╨╕╤Б╤П
-╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨╖╨░╨▓╨╡╤А╤И╨╕╨▓╤Б╤П
-00:00 +4: test\async_repository_test.dart: AsyncRepository ╨Т╨╕╨┤╨░╨╗╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤В╤П
-00:00 +5: test\async_repository_test.dart: AsyncRepository ╨Т╨╕╨┤╨░╨╗╨╡╨╜╨╜╤П ╨╜╨╡╤Ц╤Б╨╜╤Г╤О╤З╨╛╨│╨╛ ╨╖╨░╨╜╤П╤В╤В╤П
-00:00 +6: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╤А╤П╨┤╨╛╨║ ╨╜╨░╨┤╤Е╨╛╨┤╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤М ╤Г ╨┐╨╛╤В╨╛╤Ж╤Ц
-╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨┐╨╛╤З╨░╨▓ ╨▓╨╕╨║╨╛╨╜╤Г╨▓╨░╤В╨╕╤Б╤П
-00:00 +7: test\async_repository_test.dart: AsyncRepository ╨Я╨╛╤А╤П╨┤╨╛╨║ ╨╜╨░╨┤╤Е╨╛╨┤╨╢╨╡╨╜╨╜╤П ╨╖╨░╨╜╤П╤В╤М ╤Г ╨┐╨╛╤В╨╛╤Ж╤Ц
-╨У╨╡╨╜╨╡╤А╨░╤В╨╛╤А watchAll() ╨╖╨░╨▓╨╡╤А╤И╨╕╨▓╤Б╤П
-00:00 +8: test\lesson_event_service_test.dart: LessonEventService ╨Ю╨▒╤А╨╛╨▒╨║╨░ ╨┐╨╛╨╝╨╕╨╗╨║╨╕ ╤В╨░ ╨╜╨░╤Б╤В╤Г╨┐╨╜╨╛╤Ч ╨┐╨╛╨┤╤Ц╤Ч ╨┐╨╛╤В╨╛╨║╤Г
-00:00 +9: All tests passed!
+00:00 +0: loading test\async_repository_test.dart
+00:00 +0: test\group_schedule_test.dart: Створення заняття через публічний інтерфейс пакета
+00:00 +1: test\async_repository_test.dart: AsyncRepository Збереження та завантаження заняття
+00:00 +2: test\async_repository_test.dart: AsyncRepository Завантаження неіснуючого заняття
+00:00 +3: test\async_repository_test.dart: AsyncRepository Повторне збереження заняття
+Генератор watchAll() почав виконуватися
+Генератор watchAll() завершився
+00:00 +4: test\async_repository_test.dart: AsyncRepository Видалення заняття
+00:00 +5: test\async_repository_test.dart: AsyncRepository Видалення неіснуючого заняття
+00:00 +6: test\async_repository_test.dart: AsyncRepository Порядок надходження занять у потоці
+Генератор watchAll() почав виконуватися
+Генератор watchAll() завершився
+00:00 +7: test\holiday_api_client_test.dart: HolidayApiClient Успішне отримання свят
+00:00 +8: test\holiday_api_client_test.dart: HolidayApiClient Обробка HTTP 500
+00:00 +9: test\holiday_api_client_test.dart: HolidayApiClient Обробка некоректного JSON
+00:00 +10: test\holiday_api_client_test.dart: HolidayApiClient Обробка відсутності з’єднання
+00:00 +11: test\json_schedule_storage_test.dart: JsonScheduleStorage Збереження та завантаження заняття
+00:00 +12: test\json_schedule_storage_test.dart: JsonScheduleStorage Відсутній файл повертає порожній список
+00:00 +13: test\json_schedule_storage_test.dart: JsonScheduleStorage Пошкоджений JSON викликає помилку
+00:00 +14: test\json_schedule_storage_test.dart: JsonScheduleStorage Можна використовувати іншу назву файлу
+00:00 +15: test\lesson_event_service_test.dart: LessonEventService Буферизація подій до підписки
+00:01 +16: test\lesson_event_service_test.dart: LessonEventService Обробка помилки та наступної події потоку
+00:01 +17: test\lesson_json_test.dart: Lesson JSON Серіалізація заняття в JSON
+00:01 +18: test\lesson_json_test.dart: Lesson JSON Відновлення заняття з JSON
+00:01 +19: test\lesson_json_test.dart: Lesson JSON Помилка при відсутньому полі
+00:01 +20: test\lesson_json_test.dart: Lesson JSON Помилка при неправильній даті
+00:01 +21: test\schedule_cli_test.dart: ScheduleCli Команда help завершується успішно
+Команди: list, add, holidays
+-f, --file       Назва JSON-файлу у папці data
+                 (defaults to "schedule.json")
+-s, --subject    Фільтр за назвою дисципліни
+    --csv        Новий запис заняття у форматі CSV
+    --year       Рік для отримання свят
+                 (defaults to "2026")
+    --country    Код країни для отримання свят
+                 (defaults to "UA")
+-h, --help       Показати довідку
+00:02 +22: test\schedule_cli_test.dart: ScheduleCli Команда list читає заняття з файлу
+Файл: C:\Users\DELL\AppData\Local\Temp\schedule_cli_test_c9f0f07c\data\schedule.json
+Знайдено занять: 1
+Математика (Практика), Понеділок 09:30, аудиторія А-101
+00:02 +23: test\schedule_cli_test.dart: ScheduleCli Команда add зберігає нове заняття
+Заняття додано: Історія (Лекція), Четвер 11:00, аудиторія А-210
+00:02 +24: test\schedule_cli_test.dart: ScheduleCli Команда add без CSV повертає помилку
+Помилка: потрібно вказати --csv
+00:02 +25: test\schedule_cli_test.dart: ScheduleCli Некоректна назва файлу відхиляється
+Помилка: --file повинен містити лише назву JSON-файлу
+00:02 +26: test\schedule_cli_test.dart: ScheduleCli Невідома команда повертає помилку
+Невідома команда: unknown
+00:02 +27: test\schedule_router_test.dart: Schedule HTTP API GET /items повертає список занять
+Помилка формату: FormatException: Could not find an option named "--unknown".
+00:02 +28: test\schedule_router_test.dart: Schedule HTTP API GET /items повертає список занять
+Помилка: --file повинен містити лише назву JSON-файлу
+00:02 +29: test\schedule_router_test.dart: Schedule HTTP API GET /items повертає список занять
+00:02 +30: test\schedule_router_test.dart: Schedule HTTP API GET /items підтримує фільтрацію
+00:03 +31: test\schedule_router_test.dart: Schedule HTTP API GET /items/id повертає заняття
+00:03 +32: test\schedule_router_test.dart: Schedule HTTP API GET /items/id повертає 404
+00:03 +33: test\schedule_router_test.dart: Schedule HTTP API POST /items створює заняття
+00:03 +34: test\schedule_router_test.dart: Schedule HTTP API POST /items повертає 400 для поганого JSON
+00:03 +35: test\schedule_router_test.dart: Schedule HTTP API POST /items повертає 409 для дубліката
+00:03 +36: All tests passed!

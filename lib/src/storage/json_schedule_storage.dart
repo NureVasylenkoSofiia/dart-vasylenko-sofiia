@@ -7,6 +7,7 @@ import 'package:group_schedule/group_schedule.dart';
 
 /// Зберігає та завантажує розклад у форматі JSON.
 class JsonScheduleStorage {
+  /// Створює файлове сховище для розкладу в заданому каталозі.
   final String filePath;
 
   /// Створює файлове сховище для вибраного JSON-файлу.

@@ -1,4 +1,5 @@
-/// Альтернативна модель заняття з первинним конструктором Dart 3.13.
+/// Модель навчального заняття з використанням первинного конструктора Dart.
+// ignore: public_member_api_docs
 class const LessonPrimary({
   required final String subject,
   required final String teacher,

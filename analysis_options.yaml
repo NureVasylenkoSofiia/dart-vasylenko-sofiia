@@ -18,6 +18,7 @@ linter:
   rules:
     unawaited_futures: true
     discarded_futures: true
+    public_member_api_docs: true
 
 # analyzer:
 #   exclude:
